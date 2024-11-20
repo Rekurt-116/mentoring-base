@@ -1,0 +1,46 @@
+<section>
+ <div class="header">
+  <div class="header_left">
+    <div class="logo">
+      <img src="/assets/Frame.svg" alt="logo-header">
+    </div>
+    <nav class="navigation">
+     <button class="header-nav" routerLink="home">{{headernav1}}</button>
+     <a href="" class="header-nav" routerLink="location" *ngIf="isShowaboutCompany">{{aboutCompany}}</a>
+     <a href="" class="header-nav" *ngIf="isShowCatalog">{{headernav3}}</a>
+    </nav>
+    <button class="isShow" (click)="isShowaboutCompany = !isShowaboutCompany">Показать/Скрыть О компании</button>
+    <button class="isShow" (click)="isShowCatalog = !isShowCatalog">Показать/Скрыть Каталог</button>
+  </div>
+  <div class="header_right">
+    <button class="link-to-admin" routerLink="admin">Admin</button>
+    <img  src="/assets/Phone.svg" alt="Phone">
+    <a class="num" href="tel:+79650842929">+7 (965) 084-29-29</a>
+    <img class="heart" src="/assets/heart 1.svg" alt="Heart"> 
+    <button class="cart-button">
+      <span><img src="/assets/cart.svg" alt="Cart Icon" class="cart-icon" /></span>
+      <span class="cart-text">Пусто</span>
+    </button>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="header-2">
+  <div class="header-2-left">
+    <img class="sel" src="/assets/light.svg" alt="">
+    <div class="header-2-left_txt" *ngFor="let item of menuItems">{{item}}</div>
+   
+    <button style="color: #4B565E; background: #F0BA4E; border: 0px solid;" (click)="changeMenuText()">Изменить текст</button>
+  </div>
+<div class="header-2-right">
+  <form class="sea">
+  <input class="search" type="search" placeholder="Поиск, например Круг зачистной">
+  </form>
+  <div>
+    <img>
+    <button class="country" type="menu" ><img class="map" src="/assets/map-pin.svg" alt="">Москва</button>
+  </div>
+</div>
+ </div>
+</section>

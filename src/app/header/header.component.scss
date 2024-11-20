@@ -1,0 +1,183 @@
+.header{
+display: flex;    
+justify-content: space-between;
+height: 80px;
+color: white;
+background: #4B565E;
+padding: 0 240px;
+align-items: center;
+}
+
+.header_left{
+display: flex; 
+}
+
+.logo{
+margin-right: 20px;
+}
+
+.navigation{
+display: flex;
+align-items: center;
+font-family: Inter;
+font-size: 16px;
+font-weight: 600;
+line-height: 19.36px;
+text-align: left;
+
+}
+
+.isShow{
+color: white;
+background: #4B565E;
+border: 1px solid #F0BA4E;
+border-radius: 50px;
+margin-right: 5px;
+cursor: pointer;
+}
+
+.isShow:hover{
+    background: #F0BA4E;
+    color: #3C3C3B;
+}
+
+.header-nav{
+color:#F9FAFB;
+margin-right: 20px;
+background: #4B565E;
+border: 0px solid;
+cursor: pointer;
+}
+
+.header-nav:hover{
+    background: #F0BA4E;
+    color: #3C3C3B;
+}
+
+.header_right{
+display: flex;
+align-items: center;
+}
+
+.link-to-admin{
+color: white;
+background: #4B565E;
+border: 1px solid #F0BA4E;
+border-radius: 50px;
+margin-right: 15px;
+padding: 10px;
+cursor: pointer;
+}
+
+.link-to-admin:hover{
+    background: #F0BA4E;
+    color: #3C3C3B;
+}
+
+.num{
+color: white;
+padding: 20px;
+}
+
+.heart{    
+margin-right: 20px;
+}
+
+.cart-button {
+display: flex;
+height: 48px;
+align-items: center;
+padding: 10px 20px;
+border: 1px solid #F0BA4E;
+border-radius: 50px;
+background-color: #4B565E;
+color: white;
+cursor: pointer;
+font-size: 16px;
+}
+
+.cart-icon {
+width: 25px; /* Размер изображения */
+height: 25px;
+margin-right: 10px; /* Отступ между иконкой и текстом */
+}
+
+.header-2 {
+align-items: center;
+display: flex;
+justify-content: space-between;
+background: #F0BA4E;
+height: 48px;
+}
+
+.sel {
+margin-right: 3px;
+line-height: 48px;
+align-items: center;
+}
+
+.header-2-left {
+display: flex;
+margin-left: 240px;
+}
+
+.header-2-left_txt{
+font-size: 14px;
+font-weight: 600;
+line-height: 48px;
+text-align: left;
+color: #3C3C3B;
+border: none;
+margin-right: 20px;
+}
+
+.header-2-right{
+height: 48px;
+width: 420px;
+display: flex;
+margin-right: 240px;
+background: #F0BA4E;
+}
+
+.sea{
+display: flex;
+}
+
+.search {
+display: flex;
+outline: none;
+background: transparent;
+margin-top: 8px;
+align-items: center;
+line-height: 48px;
+width: 400px;
+height: 28px;
+padding-left: 15px;
+border: none;
+border-bottom: 1px solid black;
+}
+
+.map{
+margin: 0px 7px;
+}
+
+.country {
+display: flex;
+outline: none;
+background: transparent;
+line-height: 0.5;
+margin-left: 15px;
+border: none;
+height: 12px;
+width: 12px;
+color: white;
+cursor: pointer;
+}
+
+.header{
+line-height: 1.5;
+}
+
+.header-2{
+line-height: 1.5;
+}

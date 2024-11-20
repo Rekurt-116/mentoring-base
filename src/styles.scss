@@ -353,20 +353,17 @@
 // <weight>: Use a value from 100 to 900
 
 .header {
-  font-family: "Inter", serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
 }
 .header-2 {
-  font-family: "Inter", serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
 }
 
 .vektor-txt {
-  font-family: "Inter", serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
@@ -382,4 +379,8 @@ a {
 }
 .header-2{
   line-height: 1;
+}
+
+body {
+  font-family: Inter;
 }
