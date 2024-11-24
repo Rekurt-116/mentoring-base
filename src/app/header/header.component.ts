@@ -14,7 +14,7 @@ const upperCaseMenuItems = menuItems.map(
 const aboutCompany = 'О компании'
 
 @Component({
-    selector: 'header',
+    selector: 'app-header',
     standalone:  true,
     imports: [NgFor, NgIf, RouterLink, RouterModule,],
     templateUrl: './header.component.html',

@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { UsersListComponent } from './users-list/users-list.component';
 import { HeaderComponent } from './header/header.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { FuterComponent } from './futer/futer.component';
+import { FooterComponent } from './footer/footer.component';
 import { LocationComponent } from './location/location.component';
 import { TodosListComponent } from './todos-list/todos-list.component';
 
@@ -21,7 +21,7 @@ export const routes: Routes = [
     },
     {
         path: 'foot',
-        component: FuterComponent
+        component: FooterComponent
     },
     {
         path: 'location',

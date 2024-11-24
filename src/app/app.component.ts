@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { FuterComponent } from './futer/futer.component';
-import { HomePageComponent } from "./home-page/home-page.component";
+import { FooterComponent } from '../app/footer/footer.component';
 
 // const time = new Date() .getTime();
 // console.log("time:", time );
@@ -35,7 +34,7 @@ import { HomePageComponent } from "./home-page/home-page.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, HeaderComponent, FuterComponent, HomePageComponent],
+  imports: [RouterOutlet, RouterModule, HeaderComponent, FooterComponent,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

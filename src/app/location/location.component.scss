@@ -47,3 +47,119 @@ text-underline-position: from-font;
 text-decoration-skip-ink: none;
 color: #3C3C3B;
 }
+
+.map{
+box-sizing: border-box;
+height: 759px;
+width: 1920px;
+background-image: url('/assets/Rectangle 31.png');
+padding: 18px;
+}
+
+.contacts{
+display: flex;
+flex-direction: column;
+box-sizing: border-box;
+height: 723px;
+width: 646px;
+margin-left: 282px;
+gap: 16px;
+opacity: 0px;
+background: #FFFFFFCC;
+box-shadow: 0px 20px 50px 0px #12112714;
+backdrop-filter: blur(50px);
+}
+
+.map-img{
+width: 100%;
+}
+
+.number-mail{
+display: flex;
+padding: 0px 28px 0px 28px;
+gap: 116px;
+margin-top: 16px;
+}
+
+.phone{
+height: 24px;
+margin-right: 8px;
+}
+
+.number{
+display: flex;
+flex-direction: column;
+padding: 4px 0px 0px 0px;
+gap: 8px;
+opacity: 0px;
+}
+
+.text-number{
+font-size: 12px;
+font-weight: 400;
+line-height: 15px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #3C3C3B;
+}
+
+.number-1{
+font-size: 16px;
+font-weight: 500;
+line-height: 19.36px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #3C3C3B;
+}
+
+.number-2{
+font-size: 16px;
+font-weight: 500;
+line-height: 19.36px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #3C3C3B;   
+}
+
+.line{
+width: 590px;
+margin:  0 auto;
+border: 1px solid #0000001A
+}
+
+.operating-mode{
+display: flex;
+padding: 0px 28px 0px 28px;
+gap: 28px;
+}
+
+.operating-text{
+height: 19px;
+width: 169px;
+color: #000000;
+}
+
+.mode-text{
+display: flex;
+flex-direction: column;
+height: 77px;
+width: 193px;
+gap: 10px;
+}
+
+.text{
+display: flex;
+gap: 28px;
+}
+
+.txt1{
+width: 66px;
+color:#000000;
+}
+
+.txt2{
+color:#000000;
+}

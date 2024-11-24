@@ -37,8 +37,8 @@ cursor: pointer;
 }
 
 .isShow:hover{
-    background: #F0BA4E;
-    color: #3C3C3B;
+background: #F0BA4E;
+color: #3C3C3B;
 }
 
 .header-nav{
@@ -50,8 +50,8 @@ cursor: pointer;
 }
 
 .header-nav:hover{
-    background: #F0BA4E;
-    color: #3C3C3B;
+background: #F0BA4E;
+color: #3C3C3B;
 }
 
 .header_right{
@@ -70,8 +70,8 @@ cursor: pointer;
 }
 
 .link-to-admin:hover{
-    background: #F0BA4E;
-    color: #3C3C3B;
+background: #F0BA4E;
+color: #3C3C3B;
 }
 
 .num{
@@ -108,6 +108,7 @@ display: flex;
 justify-content: space-between;
 background: #F0BA4E;
 height: 48px;
+padding: 0px 240px;
 }
 
 .sel {
@@ -118,7 +119,6 @@ align-items: center;
 
 .header-2-left {
 display: flex;
-margin-left: 240px;
 }
 
 .header-2-left_txt{
@@ -133,9 +133,7 @@ margin-right: 20px;
 
 .header-2-right{
 height: 48px;
-width: 420px;
 display: flex;
-margin-right: 240px;
 background: #F0BA4E;
 }
 
@@ -157,7 +155,16 @@ border: none;
 border-bottom: 1px solid black;
 }
 
+.map-country{
+display: flex;
+align-items: center;
+height: 48px;
+width: 12px;
+
+}
+
 .map{
+align-items: center;
 margin: 0px 7px;
 }
 
@@ -166,10 +173,7 @@ display: flex;
 outline: none;
 background: transparent;
 line-height: 0.5;
-margin-left: 15px;
 border: none;
-height: 12px;
-width: 12px;
 color: white;
 cursor: pointer;
 }
