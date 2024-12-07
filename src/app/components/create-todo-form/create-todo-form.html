@@ -1,0 +1,18 @@
+<div class="form-box">
+    <form 
+    class="form"
+    [formGroup]="form"
+    (ngSubmit)="formInput()"
+    >
+        <p>Текст задачи:</p>
+        <input class="form-input" type="text" formControlName="title">
+
+        <p>Автор задачи</p>
+        <input class="form-input" type="text" formControlName="userId">
+
+        <p>Задача завершена</p>
+        <input class="form-input" type="text" formControlName="completed"><br>
+
+        <button class="button-form" [disabled]="form.valid">CREATE TODO</button>
+    </form>
+</div>

@@ -4,4 +4,18 @@
   height: 300px;
   border: 1px solid black;
   padding: 10px;
+  border-radius: 20px;
+}
+
+.button-form {
+  color: #3C3C3B;
+  background: #F0BA4E;
+  border: 1px #F0BA4E;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.button-form:hover {
+  background: #3C3C3B;
+  color: #F0BA4E;
 }

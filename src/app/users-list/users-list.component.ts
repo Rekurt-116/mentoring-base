@@ -1,19 +1,36 @@
-import { AsyncPipe, NgFor } from "@angular/common";
+import { AsyncPipe, formatDate, NgFor } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject, Injectable } from "@angular/core";
 import { UserApiServise } from "../user-api-service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../users.service";
+import { CreateUserFormComponent } from "../components/create-user-form/create-user-form.component";
 
 const consoleResponse = (response: any) => {
     console.log(response);
 }
 
 export interface User {
-    id: any;
+    id: number,
     name: string,
-    email: any,
-    website: any,
-    companyname: any,
+    username?: string,
+    email: string,
+    address?: {
+        street: string,
+        suite: string,
+        city: string,
+        zipcode: string,
+        geo: {
+            lat: string,
+            lng: string
+        }
+    },
+    phone?: string,
+    website: string,
+    company: {
+        name: string,
+        catchPhrase?: string,
+        bs?: string
+    }
 }
 
 @Component({
@@ -21,7 +38,7 @@ export interface User {
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
     standalone: true,
-    imports: [NgFor, UserCardComponent, AsyncPipe],
+    imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
@@ -37,9 +54,27 @@ export class UsersListComponent {
                 // console.log('USERS:', this.users)
             }
         )
+
+        this.usersService.users$.subscribe(
+            users => console.log(users)
+        )
+    }
+
+    createUser(formData: any) {
+        this.usersService.creatUser({
+            id: new Date().getTime(),
+            name: formData.name,
+            email: formData.email,
+            website: formData.website,
+            company: {
+                name: formData.companyName,
+            },
+        });
+        console.log('ДАННЫЕ ФОРМЫ', event);
     }
 
     deleteUser(id: number) {
         this.usersService.deleteUser(id);
     }
+
 }

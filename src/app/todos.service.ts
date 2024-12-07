@@ -5,7 +5,6 @@ import { Todo } from "./todos-list/todos-list.component";
 @Injectable({providedIn: 'root'})
 export class TodosService{
     todoSubjects = new BehaviorSubject<Todo[]>([]);
-    todos: Todo [] = [];
 
     setTodo(todos: Todo[]) {
         this.todoSubjects.next(todos);
@@ -39,9 +38,9 @@ export class TodosService{
                        return false
                     } else {
                         return true;
-                   }
-                 }
-               )
+                    }
+                }
+            )
         )
     }
 }

@@ -1,0 +1,22 @@
+<div class="box-form">
+<form
+  class="form-input"
+  [formGroup]="form"
+  (ngSubmit)="formInput()"
+>
+    <p>create-user-form works!</p>
+    <p>NAME: </p>
+    <input class="input" type="text" formControlName="name">
+
+    <p>EMAIL: </p>
+    <input class="input" type="text" formControlName="email">
+
+    <p>WEBSITE: </p>
+    <input class="input" type="text" formControlName="website">
+
+    <p>COMPANY-NAME: </p>
+    <input class="input" type="text" formControlName="companyName">
+
+    <button class="button-form" [disabled]="form.invalid">CREATE-USER</button>
+</form>
+</div>

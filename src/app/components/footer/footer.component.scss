@@ -1,0 +1,222 @@
+.futer {
+    height: 373px;
+    width: 100;
+    background: #4B565E;
+    padding: 30px;
+    margin: 0 auto;
+}
+.futer-top-bot {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 373px;
+}
+
+.futer-container {
+    display: flex;
+    width: 1320px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.futer-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 111px;
+    width: 534px;
+}
+
+.logo {
+    display: flex;
+    height: 39px;
+    width: 59px;
+    margin-bottom: 30px;
+}
+
+.contacts {
+    display: flex;
+    width: Hug (419px)px;
+    height: Hug (40px)px;
+    opacity: 0px;
+    justify-content: space-between;
+}
+
+.phone {
+    height: 24px;
+    margin-right: 5px;
+}
+
+.number {
+    display: flex;
+    flex-direction: column;
+    width: Hug (161px)px;
+    height: Hug (73px)px;
+    padding: 4px 0px 0px 0px;
+    gap: 8px;
+    opacity: 0px;
+}
+
+.text-number {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF99;
+}
+
+.number-1 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF;
+}
+
+.number-2 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF;   
+}
+
+.futer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 162px;
+    width: 534px;
+    gap: 32px;
+}
+
+.support-txt-mail {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.support-text-1 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.78px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF;
+}
+
+.support-text-2{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF99;
+}
+
+.support-mail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    width: 534px;
+    box-sizing: border-box;
+    border: 1px solid #F0BA4E;
+    border-radius: 50px;
+    padding: 0px 5px 0px 20px;
+}
+
+.logo-in-sup {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.support-logo {
+    height: 16px;
+    width: 16px;
+}
+
+.support-input {
+    background: #4B565E;
+    border: 0px solid;
+    outline: none;
+    background: transparent;
+}
+
+.support-button {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12.1px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    height: 36px;
+    width: 96px;
+    color: #FFFFFF;
+    background: #F0BA4E;
+    border: 0px solid;
+    border-radius: 50px;
+}
+
+.futer-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 77px;
+    width: 1320px;
+    margin: 0 auto;
+    gap: 36px;
+}
+
+.futer-nav-logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.futer-nav {
+    display: flex;
+    gap: 28px;
+}
+
+.nav {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.nav:hover {
+    background: #FFFFFF;
+    color: #000;
+    border-radius: 15px;
+}
+
+.img-nav-logo {
+    display: flex;
+    gap: 20px;
+}
+
+.year-prj {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: right;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF99;
+}

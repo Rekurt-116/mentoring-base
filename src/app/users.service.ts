@@ -4,17 +4,20 @@ import { BehaviorSubject, Observable, Subscribable } from "rxjs";
 
 @Injectable({providedIn: 'root' })
 export class UsersService {
-    userSubjects = new BehaviorSubject<User[]>([]);
-    users: User [] = [];
-usersSubjects: Observable<undefined> | Subscribable<undefined> | Promise<undefined> | undefined;
+    userSubject$:
+    BehaviorSubject<User[]>= new 
+    BehaviorSubject<User[]>([]);
+
+    public users$: Observable<User[]> =
+    this.userSubject$.asObservable();
 
     setUsers(users: User[]) {
-        this.userSubjects.next(users);
+        this.userSubject$.next(users);
     }
 
     editUser(editedUser: User) {
-        this.userSubjects.next(
-            this.userSubjects.value.map(
+        this.userSubject$.next(
+            this.userSubject$.value.map(
                 user => {
                     if (user.id === editedUser.id) {
                         return editedUser 
@@ -27,14 +30,21 @@ usersSubjects: Observable<undefined> | Subscribable<undefined> | Promise<undefin
     }
 
     creatUser(user: User) {
-        this.userSubjects.next(
-            [...this.userSubjects.value, user]
-        )
+        const userIsExensting = this.userSubject$.value.find(
+            (currentElement) => currentElement.email === user.email
+        );
+
+        if(userIsExensting !== undefined) {
+            alert('Такой email уже зареган')
+        } else {
+        this.userSubject$.next([...this.userSubject$.value, user]);
+        alert('Пользователь успешно добавлен'); 
+        }
     }
 
     deleteUser(id: number) {
-            this.userSubjects.next(
-            this.userSubjects.value.filter(
+            this.userSubject$.next(
+            this.userSubject$.value.filter(
                 item => {
                     if (id === item.id) {
                         return false 
