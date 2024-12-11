@@ -4,19 +4,34 @@
   [formGroup]="form"
   (ngSubmit)="formInput()"
 >
-    <p>create-user-form works!</p>
-    <p>NAME: </p>
-    <input class="input" type="text" formControlName="name">
 
-    <p>EMAIL: </p>
-    <input class="input" type="text" formControlName="email">
+    <mat-form-field class="input">
+      <mat-label>Введите имя пользователя</mat-label>
+      <input matInput formControlName="name">
+      <mat-error>Некорректное значение</mat-error>
+    </mat-form-field>
 
-    <p>WEBSITE: </p>
-    <input class="input" type="text" formControlName="website">
+    <mat-form-field class="input">
+      <mat-label>Введите email</mat-label>
+      <input matInput formControlName="email">
+      <mat-error>Некорректное значение</mat-error>
+    </mat-form-field>
 
-    <p>COMPANY-NAME: </p>
-    <input class="input" type="text" formControlName="companyName">
+    <mat-form-field class="input">
+      <mat-label>Введите wesite</mat-label>
+      <input matInput formControlName="website">
+      <mat-error>Некорректное значение</mat-error>
+    </mat-form-field>
 
-    <button class="button-form" [disabled]="form.invalid">CREATE-USER</button>
+    <mat-form-field class="input">
+      <mat-label>Введите companyName</mat-label>
+      <input matInput formControlName="companyName">
+      <mat-error>Некорректное значение</mat-error>
+    </mat-form-field>
+
+    <button class="button-form" matIconSuffix mat-raised-button [disabled]="form.invalid"> Add User
+      <mat-icon>add</mat-icon>
+    </button>
+
 </form>
 </div>
