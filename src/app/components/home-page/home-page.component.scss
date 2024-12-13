@@ -1,5 +1,28 @@
-.background-big {
+.man-box {
+  height: 720px;
   width: 100%;
+  background-image: url('/assets/Rectangle 5.png');
+}
+
+.vektorText {
+  width: 1054px;
+  height: 720px;
+  position: relative;
+}
+
+.text-vektor {
+  width: 543px;
+  height: 112px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #F0BA4E;
+  position: absolute;
+  top: 304px;
+  left: 300px;
 }
 
 .showMan {

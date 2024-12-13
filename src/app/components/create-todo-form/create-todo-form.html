@@ -1,9 +1,6 @@
 <div class="form-box">
     <form 
-    class="form"
-    [formGroup]="form"
-    (ngSubmit)="formInput()"
-    >
+    class="form"[formGroup]="form">
 
         <mat-form-field class="form-input">
             <mat-label>Текст задачи</mat-label>
@@ -22,7 +19,7 @@
             <input matInput formControlName="completed">
             <mat-error>Некорректное значение</mat-error>
         </mat-form-field>
-        <button class="button-form" matIconSuffix mat-raised-button [disabled]="form.invalid">Add Todo
+        <button class="button-form" type="submit" (click)="formInput()" matIconSuffix mat-raised-button [disabled]="form.invalid">Add Todo
             <mat-icon>add</mat-icon>
         </button>
     </form>

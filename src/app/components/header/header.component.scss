@@ -120,16 +120,17 @@
 
 .header-2-left {
     display: flex;
+    align-items: center;
 }
 
 .header-2-left_txt {
     font-size: 14px;
     font-weight: 600;
-    line-height: 48px;
+    line-height: 17px;
     text-align: left;
-    color: #3C3C3B;
-    border: none;
-    margin-right: 20px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-right: 24px;
 }
 
 .header-2-right {
@@ -161,6 +162,11 @@
     height: 24px;
 }
 
+.map-pin {
+    display: flex;
+    align-items: center;
+}
+
 .map-country {
     display: flex;  
     align-items: center;
@@ -175,9 +181,9 @@
 
 .country {
     display: flex;
+    align-items: center;
     outline: none;
     background: transparent;
-    line-height: 0.5;
     border: none;
     color: white;
     cursor: pointer;

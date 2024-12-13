@@ -3,5 +3,6 @@
     <p>{{user.email}}</p>
     <p>{{user.website}}</p>
     <p>{{user.company.name}}</p>
-    <button class="delete-user" (click)="onDeleteuser(user.id)">DELETE USER</button>
+    <button class="delete-user" (click)="onDeleteuser(user.id)">Удалить Пользователя</button>
+    <button class="delete-user" (click)="openDialog()">Редактировать Пользователя</button>
 </div>

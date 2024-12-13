@@ -4,12 +4,14 @@ import { UserApiServise } from "../user-api-service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../users.service";
 import { CreateUserFormComponent } from "../components/create-user-form/create-user-form.component";
+import { EditUserDialogComponent } from "./edit-user-dialod.component/edit-user-dialog.component";
 
 const consoleResponse = (response: any) => {
     console.log(response);
 }
 
 export interface User {
+    open(EditUserDialogComponent: EditUserDialogComponent, arg1: { data: { user: User; }; }): unknown;
     id: number,
     name: string,
     username?: string,
@@ -69,12 +71,24 @@ export class UsersListComponent {
             company: {
                 name: formData.companyName,
             },
+            open: function (EditUserDialogComponent: EditUserDialogComponent, arg1: { data: { user: User; }; }): unknown {
+                throw new Error("Function not implemented.");
+            }
         });
         console.log('ДАННЫЕ ФОРМЫ', event);
     }
 
     deleteUser(id: number) {
         this.usersService.deleteUser(id);
+    }
+
+    editUser(user: any) {
+        this.usersService.editUser({
+            ...user,
+            company: {
+                name: user.companyName,
+            },
+        })
     }
 
 }

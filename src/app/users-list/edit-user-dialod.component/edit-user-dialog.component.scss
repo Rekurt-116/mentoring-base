@@ -1,0 +1,23 @@
+.box-form{
+    margin: 15px;
+}
+
+.form-input{
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.input{
+    width: 300px;
+}
+
+.button-form{
+    display: flex;
+    box-sizing: border-box;
+    height: 25px;
+    width: 150px;
+    margin-top: 15px;
+    align-items: center;
+}
