@@ -1,6 +1,19 @@
 .user-block{
     display: flex;
     flex-wrap: wrap;
-    width: 1200px;
-    margin: 0 auto
+    width: 1210px;
+    margin: 0 auto;
+    border: 1px solid #3C3C3B;
+    border-radius: 20px;
+    background: #4b565e;
+}
+
+.users {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+    align-self: center;
+    justify-content: center;
+    color: #F0BA4E;
 }

@@ -1,9 +1,9 @@
 import { AsyncPipe, formatDate, NgFor } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject, Injectable } from "@angular/core";
-import { UserApiServise } from "../user-api-service";
+import { UserApiServise } from "../services/user-api-service";
 import { UserCardComponent } from "./user-card/user-card.component";
-import { UsersService } from "../users.service";
-import { CreateUserFormComponent } from "../components/create-user-form/create-user-form.component";
+import { UsersService } from "../services/users.service";
+import { CreateUserFormComponent } from "./create-user-form/create-user-form.component";
 import { EditUserDialogComponent } from "./edit-user-dialod.component/edit-user-dialog.component";
 
 const consoleResponse = (response: any) => {
@@ -11,7 +11,6 @@ const consoleResponse = (response: any) => {
 }
 
 export interface User {
-    open(EditUserDialogComponent: EditUserDialogComponent, arg1: { data: { user: User; }; }): unknown;
     id: number,
     name: string,
     username?: string,
@@ -33,6 +32,14 @@ export interface User {
         catchPhrase?: string,
         bs?: string
     }
+}
+
+export interface IUser {
+    id: number,
+    name: string,
+    email: string,
+    website: string,
+    companyName : string
 }
 
 @Component({
@@ -62,7 +69,7 @@ export class UsersListComponent {
         )
     }
 
-    createUser(formData: any) {
+    createUser(formData: IUser) {
         this.usersService.creatUser({
             id: new Date().getTime(),
             name: formData.name,
@@ -71,9 +78,6 @@ export class UsersListComponent {
             company: {
                 name: formData.companyName,
             },
-            open: function (EditUserDialogComponent: EditUserDialogComponent, arg1: { data: { user: User; }; }): unknown {
-                throw new Error("Function not implemented.");
-            }
         });
         console.log('ДАННЫЕ ФОРМЫ', event);
     }

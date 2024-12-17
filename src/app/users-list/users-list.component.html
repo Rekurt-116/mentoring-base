@@ -1,9 +1,9 @@
-COMPONENT USERS LIST
-
 <app-create-user-form (createUser)="createUser($event)"></app-create-user-form>
 <div class="user-block">
+    <h1 class="users">Пользователи</h1>
     <div *ngFor="let user of usersService.users$ | async">
-        <app-user-card [user]="user" 
+        <app-user-card 
+        [user]="user" 
         (deleteUser)="deleteUser($event)"
         (editUser)="editUser($event)"
         ></app-user-card>

@@ -26,12 +26,6 @@ export class EditUserDialogComponent {
 
     readonly dialogRef = inject(MatDialogRef<EditUserDialogComponent>);
 
-animal() {
-throw new Error('Method not implemented.');
-}
-formInput() {
-throw new Error('Method not implemented.');
-}
     readonly data = inject<{ user: User }>(MAT_DIALOG_DATA);
 
     form = new FormGroup({

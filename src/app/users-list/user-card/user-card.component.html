@@ -1,8 +1,16 @@
 <div class="user">
-    <p>{{user.name}}</p>
-    <p>{{user.email}}</p>
-    <p>{{user.website}}</p>
-    <p>{{user.company.name}}</p>
-    <button class="delete-user" (click)="onDeleteuser(user.id)">Удалить Пользователя</button>
+    <mat-card appearance="outlined">
+        <mat-card-content>{{user.name}}</mat-card-content>
+      </mat-card>
+    <mat-card appearance="outlined">
+        <mat-card-content>{{user.email}}</mat-card-content>
+      </mat-card>
+    <mat-card appearance="outlined">
+        <mat-card-content>{{user.website}}</mat-card-content>
+      </mat-card>
+    <mat-card appearance="outlined">
+        <mat-card-content>{{user.company.name}}</mat-card-content>
+      </mat-card>
+    <button class="delete-user" (click)="openDeleteDialog()">Удалить Пользователя</button>
     <button class="delete-user" (click)="openDialog()">Редактировать Пользователя</button>
 </div>
