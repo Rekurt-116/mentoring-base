@@ -1,12 +1,12 @@
 <div class="user">
     <mat-card appearance="outlined">
-        <mat-card-content>{{user.name}}</mat-card-content>
+        <mat-card-content>{{user.name | customUpperCase}}</mat-card-content>
       </mat-card>
     <mat-card appearance="outlined">
-        <mat-card-content>{{user.email}}</mat-card-content>
+        <mat-card-content>{{user.email | customUpperCase}}</mat-card-content>
       </mat-card>
     <mat-card appearance="outlined">
-        <mat-card-content>{{user.website}}</mat-card-content>
+        <mat-card-content>{{user.website | customUpperCase}}</mat-card-content>
       </mat-card>
     <mat-card appearance="outlined">
         <mat-card-content>{{user.company.name}}</mat-card-content>
