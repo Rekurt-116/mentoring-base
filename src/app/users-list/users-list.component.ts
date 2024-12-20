@@ -4,7 +4,6 @@ import { UserApiServise } from "../services/user-api-service";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { UsersService } from "../services/users.service";
 import { CreateUserFormComponent } from "./create-user-form/create-user-form.component";
-import { EditUserDialogComponent } from "./edit-user-dialod.component/edit-user-dialog.component";
 
 const consoleResponse = (response: any) => {
     console.log(response);
@@ -86,7 +85,7 @@ export class UsersListComponent {
         this.usersService.deleteUser(id);
     }
 
-    editUser(user: any) {
+    editUser(user: IUser) {
         this.usersService.editUser({
             ...user,
             company: {

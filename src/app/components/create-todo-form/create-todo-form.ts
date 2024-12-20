@@ -6,10 +6,10 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 
 @Component({
-    selector: 'app-create-todo-form',
+    selector: "app-create-todo-form",
     standalone: true,
-    templateUrl: './create-todo-form.html',
-    styleUrl: './create-todo-form.scss',
+    templateUrl: "./create-todo-form.html",
+    styleUrl: "./create-todo-form.scss",
     imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule],
 })
 export class CreateTodoFormComponent {

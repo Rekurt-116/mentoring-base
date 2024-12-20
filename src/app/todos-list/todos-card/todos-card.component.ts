@@ -1,8 +1,8 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { Todo } from '../todos-list.component';
-import { MatDialog } from '@angular/material/dialog';
-import { DeleteTodoDialogComponent } from '../../services/delete-todo-dialog.component/delete-todo-dialog.component';
-import { LimitationString } from '../../pipes/limitation-string-to-20.pipe';
+import { Component, EventEmitter, inject, Input, Output } from "@angular/core";
+import { Todo } from "../todos-list.component";
+import { MatDialog } from "@angular/material/dialog";
+import { DeleteTodoDialogComponent } from "../../services/delete-todo-dialog.component/delete-todo-dialog.component";
+import { LimitationString } from "../../pipes/limitation-string-to-20.pipe";
 
 @Component({
   selector: 'app-todos-card',

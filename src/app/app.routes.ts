@@ -8,7 +8,7 @@ import { TodosListComponent } from './todos-list/todos-list.component';
 
 export const routes: Routes = [
     {
-        path: 'head',
+        path: 'header',
         component: HeaderComponent
     },
     {
@@ -20,7 +20,7 @@ export const routes: Routes = [
         component: HomePageComponent
     },
     {
-        path: 'foot',
+        path: 'footer',
         component: FooterComponent
     },
     {
