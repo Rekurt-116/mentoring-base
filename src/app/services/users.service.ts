@@ -21,6 +21,7 @@ export class UsersService {
             this.userSubject$.value.map(
                 user => {
                     if (user.id === editedUser.id) {
+                        this.openSnackBar('Пользователь успешно отредактирован','')
                         return editedUser 
                     } else {
                         return user
@@ -59,7 +60,7 @@ export class UsersService {
         }
     
         openSnackBar(message: string, action: string) {
-            this.snackBar.open(message, action, {duration: 5000});
+            this.snackBar.open(message, action, {duration: 3000});
           }
     
           public openDeleteSnack(): void {
@@ -72,8 +73,8 @@ export class UsersService {
             this.userSubject$.value.filter(
                 item => {
                     if (id === item.id) {
-                        return false
                         this.openDeleteSnack()
+                        return false
                     } else {
                         return true
                     }
