@@ -42,7 +42,8 @@ export class EditUserDialogComponent {
     get userWithUpdatedFielts() {
         return {
             ...this.form.value,
-            id: this.data.user.id
+            id: this.data.user.id,
+            
         } 
     }
 }

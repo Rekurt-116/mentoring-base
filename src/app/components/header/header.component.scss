@@ -31,9 +31,11 @@
     color: white;
     background: #4B565E;
     border: 1px solid #F0BA4E;
-    border-radius: 50px;
-    margin-right: 5px;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 5px;
     cursor: pointer;
+    font-size: 10px;
 }
 
 .isShow:hover {
@@ -60,13 +62,20 @@
     align-items: center;
 }
 
+.date {
+    margin: 0px 20px 0px 0px;
+    color: #F0BA4E;
+    font-size: 10px;
+}
+
 .link-to-admin {
     color: white;
     background: #4B565E;
     border: 1px solid #F0BA4E;
     border-radius: 50px;
     margin-right: 15px;
-    padding: 10px;
+    padding: 5px;
+    font-size: 10px;
     cursor: pointer;
 }
 
@@ -125,7 +134,7 @@
 
 .header-2-left_txt {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 17px;
     text-align: left;
     text-underline-position: from-font;

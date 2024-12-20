@@ -16,7 +16,7 @@ export const routes: Routes = [
         component: UsersListComponent
     },     
     {
-        path: 'home',
+        path: '',
         component: HomePageComponent
     },
     {
