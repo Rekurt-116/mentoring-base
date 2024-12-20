@@ -5,7 +5,7 @@
       <img src="/assets/Frame.svg" alt="logo-header">
     </div>
     <nav class="navigation">
-     <button class="header-nav" routerLink="home">{{headernav1}}</button>
+     <button class="header-nav" routerLink="">{{headernav1}}</button>
      <a href="" class="header-nav" routerLink="location" *ngIf="isShowaboutCompany">{{aboutCompany}}</a>
      <a href="" class="header-nav" *ngIf="isShowCatalog">{{headernav3}}</a>
     </nav>
@@ -13,9 +13,10 @@
     <button class="isShow" (click)="isShowCatalog = !isShowCatalog">Показать/Скрыть Каталог</button>
   </div>
   <div class="header_right">
+    <p class="date">{{currentDate | date: 'medium'}}</p>
     <button class="link-to-admin" routerLink="admin">Admin</button>
     <img  src="/assets/Phone.svg" alt="Phone">
-    <a class="num" href="tel:+79650842929">+7 (965) 084-29-29</a>
+    <a class="num" href="tel:+79650842929">{{number | phoneclean}}</a>
     <img class="heart" src="/assets/heart 1.svg" alt="Heart"> 
     <button class="cart-button">
       <span><img src="/assets/cart.svg" alt="Cart Icon" class="cart-icon" /></span>
@@ -47,3 +48,4 @@
 </div>
  </div>
 </section>
+
