@@ -2,6 +2,7 @@ import { DatePipe, NgFor, NgIf } from "@angular/common";
 import { Component } from "@angular/core";
 import { RouterLink, RouterModule } from "@angular/router";
 import { PhoneCleaning } from "../../pipes/phone-cleaning.pipe";
+import { YelowDirective } from "../../directives/yelow.directive";
 
 const menuItems = ['Кaталог', 'Стройматериалы', 'Инструменты', 'Электрика', 'Интерьер и одежда',]
 
@@ -23,7 +24,8 @@ const upperCaseMenuItems = menuItems.map(
       RouterLink,
       RouterModule,
       DatePipe,
-      PhoneCleaning
+      PhoneCleaning,
+      YelowDirective
     ],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',

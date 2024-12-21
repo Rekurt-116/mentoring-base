@@ -6,12 +6,19 @@ import { DeleteUserComponent } from "../../services/delete-user-dialog.component
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from '@angular/material/card';
 import { CustomUpperCase } from "../../pipes/upper-case.pipe";
+import { MatTooltipModule } from "@angular/material/tooltip";
+import { ShadowThrowDirective } from "../../directives/shadow-throw.directive";
 @Component({
     selector: 'app-user-card',
     templateUrl: './user-card.component.html',
     styleUrl: 'user-card.component.scss',
     standalone: true,
-    imports: [MatButtonModule, MatCardModule, CustomUpperCase],
+    imports: [MatButtonModule,
+      MatCardModule,
+      CustomUpperCase,
+      MatTooltipModule,
+      ShadowThrowDirective
+    ],
 })
 
 export class UserCardComponent {

@@ -17,7 +17,7 @@ import { MatButtonModule } from "@angular/material/button";
             MatIconModule,
             MatDialogClose,
             MatInputModule,
-            MatButtonModule
+            MatButtonModule,
             ],
     standalone: true,
     styleUrl: './edit-user-dialog.component.scss'

@@ -1,16 +1,19 @@
 <div class="user">
-    <mat-card appearance="outlined">
+    <mat-card shadow appearance="outlined">
         <mat-card-content>{{user.name | customUpperCase}}</mat-card-content>
       </mat-card>
-    <mat-card appearance="outlined">
+    <mat-card shadow appearance="outlined">
         <mat-card-content>{{user.email | customUpperCase}}</mat-card-content>
       </mat-card>
-    <mat-card appearance="outlined">
+    <mat-card shadow appearance="outlined">
         <mat-card-content>{{user.website | customUpperCase}}</mat-card-content>
       </mat-card>
-    <mat-card appearance="outlined">
+    <mat-card shadow appearance="outlined">
         <mat-card-content>{{user.company.name}}</mat-card-content>
       </mat-card>
-    <button class="delete-user" (click)="openDeleteDialog()">Удалить Пользователя</button>
-    <button class="delete-user" (click)="openDialog()">Редактировать Пользователя</button>
+    <button shadow class="delete-user" (click)="openDeleteDialog()">Удалить Пользователя</button>
+    <button shadow class="delete-user"
+    (click)="openDialog()"
+    matTooltip="Редактировать данные пользователя"
+    >Редактировать</button>
 </div>
