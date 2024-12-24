@@ -14,6 +14,7 @@
   </div>
   <div class="header_right">
     <p class="date">{{currentDate | date: 'medium'}}</p>
+    <button class="link-to-admin" routerLink="users">User</button>
     <button class="link-to-admin" routerLink="admin">Admin</button>
     <img  src="/assets/Phone.svg" alt="Phone">
     <a class="num" href="tel:+79650842929">{{number | phoneclean}}</a>
@@ -22,6 +23,10 @@
       <span><img src="/assets/cart.svg" alt="Cart Icon" class="cart-icon" /></span>
       <span class="cart-text">Пусто</span>
     </button>
+    <div>
+      <button yelow class="button-log" (click)="openDialog()" *ngIf="(userService.user$ | async) === null">Войти</button>
+      <button yelow class="button-log" (click)="logout()" *ngIf="(userService.user$ | async) !== null">Выйти</button>
+    </div>
   </div>
  </div>
 </section>

@@ -1,8 +1,11 @@
-import { DatePipe, NgFor, NgIf } from "@angular/common";
-import { Component } from "@angular/core";
+import { AsyncPipe, DatePipe, NgFor, NgIf } from "@angular/common";
+import { Component, inject } from "@angular/core";
 import { RouterLink, RouterModule } from "@angular/router";
 import { PhoneCleaning } from "../../pipes/phone-cleaning.pipe";
 import { YelowDirective } from "../../directives/yelow.directive";
+import { MatDialog } from "@angular/material/dialog";
+import { AuthComponent } from "../../auth/auth.component";
+import { UserService } from "../../user.service";
 
 const menuItems = ['Кaталог', 'Стройматериалы', 'Инструменты', 'Электрика', 'Интерьер и одежда',]
 
@@ -25,7 +28,9 @@ const upperCaseMenuItems = menuItems.map(
       RouterModule,
       DatePipe,
       PhoneCleaning,
-      YelowDirective
+      YelowDirective,
+      AsyncPipe,
+      NgIf
     ],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
@@ -38,8 +43,11 @@ export class HeaderComponent {
   constructor() {
     this.currentDate = new Date();
   }
+    readonly dialog = inject(MatDialog);
 
-    readonly aboutCompany = aboutCompany
+    public readonly userService = inject(UserService)
+
+    readonly aboutCompany = aboutCompany;
 
     isShowaboutCompany = true;
   
@@ -66,4 +74,29 @@ export class HeaderComponent {
   
       this.isUpperCase = !this.isUpperCase
     }
+
+    openDialog(): void {
+    const dialogRef = this.dialog.open(AuthComponent, {
+        width: '400px',
+        height: '200px'
+
+      });
+  
+      dialogRef.afterClosed().subscribe((result: string) => {
+        console.log('Результат подписки после диалогового окна',result);
+        if (result ==='admin') {
+          this.userService.loginAsAdmin()
+        } else if (result === 'user') {
+          this.userService.loginAsUser()
+        } else return undefined;
+      }
+    );
+  }
+  public logout() {
+    if(confirm('Вы точно хотите выйти?')) {
+      console.log('Совершили logout');
+      return this.userService.logout()
+    }
+    else return false;
+  }
 }

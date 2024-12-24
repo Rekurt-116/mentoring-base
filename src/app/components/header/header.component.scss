@@ -100,7 +100,7 @@
     padding: 10px 20px;
     border: 1px solid #F0BA4E;
     border-radius: 50px;
-    background-color: #4B565E;
+    background: transparent;
     color: white;
     cursor: pointer;
     font-size: 16px;
@@ -110,6 +110,14 @@
     width: 25px; /* Размер изображения */
     height: 25px;
     margin-right: 10px; /* Отступ между иконкой и текстом */
+}
+
+.button-log {
+    color: #F9FAFB;
+    font-weight: 500;
+    border-radius: 50px;
+    border: 1px solid #F0BA4E;
+    padding: 5px; 
 }
 
 .header-2 {
