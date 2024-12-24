@@ -1,5 +1,5 @@
 <div class="box-form">
-<form class="form-input" [formGroup]="form">
+  <form class="form-input" [formGroup]="form">
     <mat-form-field class="input">
       <mat-label>Введите имя пользователя</mat-label>
       <input matInput formControlName="name">
@@ -24,9 +24,13 @@
       <mat-error>Некорректное значение</mat-error>
     </mat-form-field>
 
-    <button class="button-form" type="submit" (click)="formInput()" matIconSuffix mat-raised-button [disabled]="form.invalid"> Add User
+    <button type="submit"
+    class="button-form"
+    matIconSuffix mat-raised-button
+    [disabled]="form.invalid"
+    (click)="formInput()"
+    > Add User
       <mat-icon>add</mat-icon>
     </button>
-
-</form>
+  </form>
 </div>

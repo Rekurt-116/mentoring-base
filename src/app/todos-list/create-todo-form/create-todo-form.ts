@@ -17,7 +17,6 @@ export class CreateTodoFormComponent {
     @Output()
     createTodo = new EventEmitter();
 
-
     public form = new FormGroup({
        userId: new FormControl(null,[Validators.required, Validators.minLength(1)]),
        id: new FormControl(),

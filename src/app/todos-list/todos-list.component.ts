@@ -32,7 +32,6 @@ export class TodosListComponent {
     })
   }
 
-
   readonly todosApiService = inject(TodosApiService)
   readonly todosService = inject(TodosService)
 
@@ -49,5 +48,4 @@ export class TodosListComponent {
     deleteTodo(id: number) {
       this.todosService.deleteTodo(id);
     }
-
 }
