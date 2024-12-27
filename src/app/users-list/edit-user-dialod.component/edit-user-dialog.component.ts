@@ -4,7 +4,7 @@ import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from "@angular/material
 import { MatError, MatFormFieldModule, MatLabel } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
-import { User } from "../users-list.component";
+import { User } from "../../interfaces/user.interface";
 import { MatButtonModule } from "@angular/material/button";
 
 @Component({

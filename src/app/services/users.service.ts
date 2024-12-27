@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { User } from "../users-list/users-list.component";
+import { User } from "../interfaces/user.interface";
 import { BehaviorSubject, Observable } from "rxjs";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
@@ -31,7 +31,7 @@ export class UsersService {
         )
     };
 
-    creatUser(user: User) {
+    createUser(user: User) {
         const userIsExensting = this.userSubject$.value.find(
             (currentElement) => currentElement.email === user.email
         );
@@ -43,6 +43,21 @@ export class UsersService {
         this.openSnackBar1('Пользоватедль добавлен', 'ok');
         }
     };
+    
+    deleteUser(id: number) {
+            this.userSubject$.next(
+            this.userSubject$.value.filter(
+                item => {
+                    if (id === item.id) {
+                        this.openDeleteSnack()
+                        return false
+                    } else {
+                        return true
+                    }
+                }   
+            )
+        )
+    }
     
     constructor(private snackBar: MatSnackBar) {}
 
@@ -61,25 +76,10 @@ export class UsersService {
     
         openSnackBar(message: string, action: string) {
             this.snackBar.open(message, action, {duration: 3000});
-          }
+        }
     
           public openDeleteSnack(): void {
           this.openSnackBar('Пользователь удален', 'OK');
     
         }
-
-    deleteUser(id: number) {
-            this.userSubject$.next(
-            this.userSubject$.value.filter(
-                item => {
-                    if (id === item.id) {
-                        this.openDeleteSnack()
-                        return false
-                    } else {
-                        return true
-                    }
-                }   
-            )
-        )
-    }
 }

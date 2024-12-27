@@ -1,5 +1,5 @@
 import { Component, EventEmitter, inject, Input, Output, } from "@angular/core";
-import { User } from "../users-list.component";
+import { User } from "../../interfaces/user.interface";
 import { MatDialog } from '@angular/material/dialog';
 import { EditUserDialogComponent } from "../edit-user-dialod.component/edit-user-dialog.component";
 import { DeleteUserComponent } from "../../services/delete-user-dialog.component/delete-user-dialog.component";

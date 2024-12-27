@@ -1,6 +1,6 @@
 import { Component, inject } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from "@angular/material/dialog";
-import { IUser } from "../../users-list/users-list.component";
+import { IUser } from "../../interfaces/user.interface";
 import { MatButton } from "@angular/material/button";
 import { RedDirective } from "../../directives/red.directive";
 
