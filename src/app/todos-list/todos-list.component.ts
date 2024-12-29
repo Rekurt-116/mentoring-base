@@ -4,13 +4,10 @@ import { TodosCardComponent } from "./todos-card/todos-card.component";
 import { AsyncPipe, NgFor } from "@angular/common";
 import { TodosService } from "../services/todos.service";
 import { CreateTodoFormComponent } from "./create-todo-form/create-todo-form";
-
-export interface Todo {
-  userId: number,
-  id: number,
-  title: string,
-  completed: boolean
-}
+import { Store } from "@ngrx/store";
+import { TodoAction } from "./store/todo.action";
+import { selectTodo } from "./store/todos.selectors";
+import { Todo } from "../interfaces/todo.interface";
 
 @Component({
   selector: 'app-todos-list',
@@ -23,29 +20,44 @@ export interface Todo {
 
 export class TodosListComponent {
 
-  createTodo(formData: any) {
-    this.todosService.creatTodo({
-      userId: formData.userId,
-      id: new Date().getTime(),
-      title: formData.title,
-      completed: formData.completed
-    })
+private readonly store = inject(Store)
+readonly todosService = inject(TodosService)
+readonly todosApiService = inject(TodosApiService)
+public readonly todos$ = this.store.select(selectTodo)
+
+constructor() {
+
+      this.todosApiService.getTodos().subscribe(
+          (response: Todo[]) => {
+              // this.todosService.setTodo(response)
+              this.store.dispatch(TodoAction.set({ todos: response }))
+              console.log(response)
+          }
+      )
   }
 
-  readonly todosApiService = inject(TodosApiService)
-  readonly todosService = inject(TodosService)
+  createTodo(formData: any) {
+    // this.todosService.creatTodo({
+    //   userId: formData.userId,
+    //   id: new Date().getTime(),
+    //   title: formData.title,
+    //   completed: formData.completed
+    // })
+    this.store.dispatch(
+      TodoAction.create({
+        todo: {
+          userId: formData.userId,
+          id: new Date().getTime(),
+          title: formData.title,
+          completed: formData.completed
+        }
+      })
+    )
+  }
 
-    constructor() {
 
-        this.todosApiService.getTodos().subscribe(
-            (response: any) => {
-                this.todosService.setTodo(response)
-            // console.log('TODOS:', this.todos)
-            }
-        )
-    }
-
-    deleteTodo(id: number) {
-      this.todosService.deleteTodo(id);
-    }
+  deleteTodo(id: number) {
+      // this.todosService.deleteTodo(id);
+    this.store.dispatch(TodoAction.delete({ id }))
+  }
 }

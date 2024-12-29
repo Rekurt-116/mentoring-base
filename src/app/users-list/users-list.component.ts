@@ -8,7 +8,6 @@ import { Store } from "@ngrx/store";
 import { UserAction } from "./store/user.action";
 import { User } from "../interfaces/user.interface";
 import { selectUsers } from "./store/users.selectors";
-// import { User } from "../interfaces/user.interface";
 
 
 @Component({
@@ -29,7 +28,6 @@ export class UsersListComponent {
     constructor() {
         this.userApiServise.getUsers().subscribe(
             (response: any) => {
-                // this.usersService.setUsers(response)
                 this.store.dispatch(UserAction.set({ users: response }))
             }
         );
@@ -40,15 +38,6 @@ export class UsersListComponent {
     }
 
     createUser(formData: any) {
-        // this.usersService.createUser({
-        //     id: new Date().getTime(),
-        //     name: formData.name,
-        //     email: formData.email,
-        //     website: formData.website,
-        //     company: {
-        //         name: formData.companyName,
-        //     },
-        // });
         this.store.dispatch(
             UserAction.create({
                 user: {
@@ -65,17 +54,10 @@ export class UsersListComponent {
     }
 
     deleteUser(id: number) {
-        // this.usersService.deleteUser(id);
         this.store.dispatch(UserAction.delete({ id }));
     }
 
     editUser(user: User) {
-        // this.usersService.editUser({
-        //     ...user,
-        //     company: {
-        //         name: user.companyName,
-        //     },
-        // });
         this.store.dispatch(UserAction.edit({ user }))
     }
 

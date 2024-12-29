@@ -29,21 +29,18 @@ export class EditUserDialogComponent {
     readonly data = inject<{ user: User }>(MAT_DIALOG_DATA);
 
     form = new FormGroup({
+        id: new FormControl(this.data.user.id),
         name: new FormControl(this.data.user.name, [Validators.required, Validators.minLength(2)]),
         email: new FormControl(this.data.user.email, [Validators.required, Validators.email]),
         website: new FormControl(this.data.user.website, [Validators.required, Validators.minLength(3)]),
-        companyName: new FormControl(this.data.user.company.name, [Validators.required, Validators.minLength(2)])
+        company: new FormGroup({
+            name: new FormControl(this.data.user.company.name, [Validators.required, Validators.minLength(2)])
+        })
     })
 
     submitForm() {
+        
         this.dialogRef.close(this.form.value);
     }
 
-    get userWithUpdatedFielts() {
-        return {
-            ...this.form.value,
-            id: this.data.user.id,
-            
-        } 
-    }
 }

@@ -1,7 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
 import { UserAction } from "./user.action";
-import { state } from "@angular/animations";
-import { shareReplay } from "rxjs";
 import { User } from "../../interfaces/user.interface";
 
 const initialState: { users: User[] } = {

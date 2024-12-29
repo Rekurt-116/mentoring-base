@@ -18,9 +18,9 @@
       <mat-error>Некорректное значение</mat-error>
     </mat-form-field>
 
-    <mat-form-field class="input">
+    <mat-form-field formGroupName="company" class="input">
       <mat-label>Введите companyName</mat-label>
-      <input matInput formControlName="companyName">
+      <input matInput formControlName="name">
       <mat-error>Некорректное значение</mat-error>
     </mat-form-field>
 
@@ -30,7 +30,7 @@
       mat-raised-button
       mat-raised-button-disabled
       [disabled]="form.invalid"
-      [mat-dialog-close]="userWithUpdatedFielts"> Edit User
+      (click)="submitForm()"> Edit User
       <mat-icon>add</mat-icon>
     </button>
 
