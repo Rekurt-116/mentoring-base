@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from "@angular/material/dialog";
 import { MatError, MatFormFieldModule, MatLabel } from "@angular/material/form-field";
@@ -15,12 +15,12 @@ import { MatButtonModule } from "@angular/material/button";
             MatLabel,
             MatError,
             MatIconModule,
-            MatDialogClose,
             MatInputModule,
             MatButtonModule,
             ],
     standalone: true,
-    styleUrl: './edit-user-dialog.component.scss'
+    styleUrl: './edit-user-dialog.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EditUserDialogComponent {
 

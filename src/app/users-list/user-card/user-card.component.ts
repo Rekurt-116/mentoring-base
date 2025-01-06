@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, Output, } from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output, } from "@angular/core";
 import { User } from "../../interfaces/user.interface";
 import { MatDialog } from '@angular/material/dialog';
 import { EditUserDialogComponent } from "../edit-user-dialod.component/edit-user-dialog.component";
@@ -19,6 +19,7 @@ import { ShadowThrowDirective } from "../../directives/shadow-throw.directive";
       MatTooltipModule,
       ShadowThrowDirective
     ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class UserCardComponent {

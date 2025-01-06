@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -11,7 +11,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   standalone: true,
   imports: [ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatIconModule, MatSnackBarModule],
   templateUrl: './create-user-form.component.html',
-  styleUrl: './create-user-form.component.scss'
+  styleUrl: './create-user-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreateUserFormComponent {
 

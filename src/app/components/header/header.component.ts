@@ -1,11 +1,11 @@
 import { AsyncPipe, DatePipe, NgFor, NgIf } from "@angular/common";
-import { Component, inject } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { RouterLink, RouterModule } from "@angular/router";
 import { PhoneCleaning } from "../../pipes/phone-cleaning.pipe";
 import { YelowDirective } from "../../directives/yelow.directive";
 import { MatDialog } from "@angular/material/dialog";
 import { AuthComponent } from "../../auth/auth.component";
-import { UserService } from "../../user.service";
+import { UserService } from "../../services/user.service";
 
 const menuItems = ['Кaталог', 'Стройматериалы', 'Инструменты', 'Электрика', 'Интерьер и одежда',]
 
@@ -34,6 +34,7 @@ const upperCaseMenuItems = menuItems.map(
     ],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class HeaderComponent {
@@ -83,7 +84,6 @@ export class HeaderComponent {
       });
   
       dialogRef.afterClosed().subscribe((result: string) => {
-        console.log('Результат подписки после диалогового окна',result);
         if (result ==='admin') {
           this.userService.loginAsAdmin()
         } else if (result === 'user') {
@@ -94,7 +94,6 @@ export class HeaderComponent {
   }
   public logout() {
     if(confirm('Вы точно хотите выйти?')) {
-      console.log('Совершили logout');
       return this.userService.logout()
     }
     else return false;

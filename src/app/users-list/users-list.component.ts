@@ -2,7 +2,6 @@ import { AsyncPipe, NgFor } from "@angular/common";
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { UserApiServise } from "../services/user-api-service";
 import { UserCardComponent } from "./user-card/user-card.component";
-import { UsersService } from "../services/users.service";
 import { CreateUserFormComponent } from "./create-user-form/create-user-form.component";
 import { Store } from "@ngrx/store";
 import { UserAction } from "./store/user.action";
@@ -19,24 +18,24 @@ import { selectUsers } from "./store/users.selectors";
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class UsersListComponent {
+export class UsersListComponent /*implements OnInit*/ {
     readonly userApiServise = inject(UserApiServise);
-    readonly usersService = inject(UsersService);
     private readonly store = inject(Store);
     public readonly users$ = this.store.select(selectUsers);
 
+
+    // ngOnInit(): void {
+    //     this.loadUsers();
+    // }
+
     constructor() {
         this.userApiServise.getUsers().subscribe(
-            (response: any) => {
+            (response) => {
                 this.store.dispatch(UserAction.set({ users: response }))
             }
         );
-
-        this.usersService.users$.subscribe(
-            users => console.log(users)
-        )
     }
-
+    
     createUser(formData: any) {
         this.store.dispatch(
             UserAction.create({

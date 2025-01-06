@@ -107,9 +107,9 @@
 }
 
 .cart-icon {
-    width: 25px; /* Размер изображения */
+    width: 25px;
     height: 25px;
-    margin-right: 10px; /* Отступ между иконкой и текстом */
+    margin-right: 10px;
 }
 
 .button-log {
@@ -118,6 +118,17 @@
     border-radius: 50px;
     border: 1px solid #F0BA4E;
     padding: 5px; 
+}
+
+.moscow {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #ffffff;    
 }
 
 .header-2 {
