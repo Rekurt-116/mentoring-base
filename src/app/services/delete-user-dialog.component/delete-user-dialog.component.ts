@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from "@angular/materia
 import { IUser } from "../../interfaces/user.interface";
 import { MatButton } from "@angular/material/button";
 import { RedDirective } from "../../directives/red.directive";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component ({
     standalone: true,
@@ -15,4 +16,11 @@ import { RedDirective } from "../../directives/red.directive";
 export class DeleteUserComponent {
     public readonly data = inject<{user: IUser}>(MAT_DIALOG_DATA)
     readonly dialogRef = inject(MatDialogRef<DeleteUserComponent>);
+    private readonly snackBar = inject(MatSnackBar);
+
+    openSnackBar(message: string, action: string) {
+        this.snackBar.open(message, action, {
+            duration: 3000
+        }) 
+    }
 }

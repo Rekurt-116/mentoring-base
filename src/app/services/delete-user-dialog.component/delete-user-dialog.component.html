@@ -1,5 +1,5 @@
 <h2 mat-dialog-title>Удалить пользователя {{this.data.user.name}}</h2>
 <mat-dialog-actions>
-  <button mat-button mat-dialog-close>Отмена</button>
-  <button red mat-button [mat-dialog-close]="true" cdkFocusInitial >Удалить</button>
+  <button mat-button mat-dialog-close (click)="openSnackBar('Действие Отменилось', 'Ок')">Отмена</button>
+  <button red mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="openSnackBar('Пользователь Удален', 'Ок')" >Удалить</button>
 </mat-dialog-actions>

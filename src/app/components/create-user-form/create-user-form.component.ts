@@ -27,6 +27,7 @@ export class CreateUserFormComponent {
 
   public formInput(): void{
     this.createUser.emit(this.form.value);
+    alert('User created successfully')
     this.form.reset()
   }
 }

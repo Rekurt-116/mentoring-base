@@ -39,7 +39,6 @@ export class EditUserDialogComponent {
     })
 
     submitForm() {
-        
         this.dialogRef.close(this.form.value);
     }
 

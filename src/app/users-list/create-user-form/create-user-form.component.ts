@@ -28,7 +28,6 @@ export class CreateUserFormComponent {
 
   public formInput(): void{
     this.createUser.emit(this.form.value);
-    this.form.reset();
-    
+    this.form.reset(); 
   }
 }

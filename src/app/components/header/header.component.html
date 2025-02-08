@@ -9,24 +9,26 @@
      <a href="" class="header-nav" routerLink="location" *ngIf="isShowaboutCompany">{{aboutCompany}}</a>
      <a href="" class="header-nav" *ngIf="isShowCatalog">{{headernav3}}</a>
     </nav>
-    <button class="isShow" (click)="isShowaboutCompany = !isShowaboutCompany">Показать/Скрыть О компании</button>
-    <button class="isShow" (click)="isShowCatalog = !isShowCatalog">Показать/Скрыть Каталог</button>
+    <button class="isShow" (click)="isShowaboutCompany = !isShowaboutCompany">{{ isShowaboutCompany  ? "Скрыть" : "Показать"}} О компании</button>
+    <button class="isShow" (click)="isShowCatalog = !isShowCatalog">{{ isShowCatalog  ? "Скрыть" : "Показать"}} Каталог</button>
   </div>
   <div class="header_right">
     <p class="date">{{currentDate | date: 'medium'}}</p>
+    <div>
+      <button yelow class="button-log" (click)="openDialog()" *ngIf="(userService.user$ | async) === null">Войти</button>
+      <button yelow class="button-log" (click)="logout()" *ngIf="(userService.user$ | async) !== null">Выйти</button>
+    </div>
     <button class="link-to-admin" routerLink="users">User</button>
     <button class="link-to-admin" routerLink="admin">Admin</button>
-    <img  src="/assets/Phone.svg" alt="Phone">
-    <a class="num" href="tel:+79650842929">{{number | phoneclean}}</a>
+    <div class="number">
+      <img  src="/assets/Phone.svg" alt="Phone">
+      <a class="num" href="tel:+79650842929">{{number | phoneclean}}</a>
+    </div>
     <img class="heart" src="/assets/heart 1.svg" alt="Heart"> 
     <button yelow class="cart-button">
       <span><img src="/assets/cart.svg" alt="Cart Icon" class="cart-icon" /></span>
       <span class="cart-text">Пусто</span>
     </button>
-    <div>
-      <button yelow class="button-log" (click)="openDialog()" *ngIf="(userService.user$ | async) === null">Войти</button>
-      <button yelow class="button-log" (click)="logout()" *ngIf="(userService.user$ | async) !== null">Выйти</button>
-    </div>
   </div>
  </div>
 </section>

@@ -1,6 +1,6 @@
-<section>
-    <button class="showMan"  (click)="isShowMan = !isShowMan" >Показать/Скрыть Грустного мужика</button>
-   <div class="man-box">
+<section style="background: #4B565E;">
+  <button class="showMan"  (click)="isShowMan = !isShowMan" >{{ isShowMan  ? "Скрыть" : "Показать"}} Грустного мужика</button>
+  <div class="man-box" *ngIf="isShowMan">
     <div class="vektorText"><img src="/assets/vektor.svg" alt="">
      <span class="text-vektor">Инструмент для вашего бизнеса</span>
     </div>
@@ -60,12 +60,12 @@
         <div shadow class="item-cards__grid-right-block-t-l">
           <span class="item-cards__grid-right-block-t-l-text">Эмали</span>
           <div class="item-cards__grid-text-2-f-l">
-            <div class="item-cards__grid-text-2-action">
+            <div class="item-cards__grid-left-action">
               <span>Перейти в каталог</span>
-              <a class="item-cards__grid-right-action-link">
+              <a class="item-cards__grid-left-action-link">
                 <img src="/assets/Arrow 6.svg" alt="">
               </a>
-            </div> 
+            </div>  
           </div>
         </div>
         <div shadow class="item-cards__grid-right-block-t-r">

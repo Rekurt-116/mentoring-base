@@ -1,4 +1,4 @@
-import { NgFor } from "@angular/common";
+import { NgFor, NgIf } from "@angular/common";
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { ShadowThrowDirective } from "../../directives/shadow-throw.directive";
@@ -10,7 +10,7 @@ const newPages=['5', '4', '3', '2', '1']
     standalone: true,
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.scss',
-    imports: [ NgFor, RouterModule, ShadowThrowDirective],
+    imports: [ NgFor, RouterModule, ShadowThrowDirective, NgIf],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePageComponent {

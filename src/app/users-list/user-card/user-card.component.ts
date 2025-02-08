@@ -24,23 +24,23 @@ import { ShadowThrowDirective } from "../../directives/shadow-throw.directive";
 
 export class UserCardComponent {
 
-    readonly dialog = inject(MatDialog);
+  readonly dialog = inject(MatDialog);
 
 
-public openDeleteDialog(): void {
-      const dialogRef = this.dialog.open(DeleteUserComponent, {
-        width: '600px',
-        data: {user: this.user}
-      });
+  public openDeleteDialog(): void {
+        const dialogRef = this.dialog.open(DeleteUserComponent, {
+          width: '600px',
+          data: {user: this.user}
+        });
   
       dialogRef.afterClosed().subscribe(result => {
         if (result) {
         this.deleteUser.emit(this.user.id);
       }
       });
-    }
+  }
 
-public openDialog(): void {
+  public openDialog(): void {
       const dialogRef = this.dialog.open(EditUserDialogComponent, {
           data: {user: this.user},
       });
@@ -50,7 +50,7 @@ public openDialog(): void {
         if (!editResult) return;
         this.editUser.emit(editResult);
       });
-}
+  }
 
     @Input()
     user!: User;

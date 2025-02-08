@@ -5,8 +5,8 @@ import { UserCardComponent } from "./user-card/user-card.component";
 import { CreateUserFormComponent } from "./create-user-form/create-user-form.component";
 import { Store } from "@ngrx/store";
 import { UserAction } from "./store/user.action";
-import { User } from "../interfaces/user.interface";
 import { selectUsers } from "./store/users.selectors";
+import { User } from "../interfaces/user.interface";
 
 
 @Component({
@@ -14,19 +14,18 @@ import { selectUsers } from "./store/users.selectors";
     templateUrl: './users-list.component.html',
     styleUrl: './users-list.component.scss',
     standalone: true,
-    imports: [NgFor, UserCardComponent, AsyncPipe, CreateUserFormComponent],
+    imports: [NgFor,
+        UserCardComponent,
+        AsyncPipe,
+        CreateUserFormComponent
+    ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class UsersListComponent /*implements OnInit*/ {
+export class UsersListComponent {
     readonly userApiServise = inject(UserApiServise);
     private readonly store = inject(Store);
     public readonly users$ = this.store.select(selectUsers);
-
-
-    // ngOnInit(): void {
-    //     this.loadUsers();
-    // }
 
     constructor() {
         this.userApiServise.getUsers().subscribe(

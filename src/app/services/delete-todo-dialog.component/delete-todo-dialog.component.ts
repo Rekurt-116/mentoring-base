@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from "@angular/material/dialog";
 import { Todo } from "../../interfaces/todo.interface";
 import { MatButtonModule } from "@angular/material/button";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component ({
     standalone: true,
@@ -14,6 +15,11 @@ import { MatButtonModule } from "@angular/material/button";
 export class DeleteTodoDialogComponent {
     public readonly data = inject<{todo: Todo}>(MAT_DIALOG_DATA)
     readonly dialogRef = inject(MatDialogRef<DeleteTodoDialogComponent>);
+    private snackBar = inject(MatSnackBar)
 
-    
+    openSnack(message: string, action: string) {
+        this.snackBar.open(message, action, {
+            duration: 3000
+        })
+    }
 }
