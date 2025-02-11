@@ -5,6 +5,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateUserDialogComponent } from '../create-user-dialog/create-user-dialog.component';
 
 @Component({
   selector: 'app-create-user-form',
@@ -18,16 +20,19 @@ export class CreateUserFormComponent {
 
     @Output()
     createUser = new EventEmitter();
+    
+    constructor(
+      public dialog: MatDialog,
+    ) {}
 
-  public form = new FormGroup({
-    name: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-    email: new FormControl(null, [Validators.required, Validators.email]),
-    website: new FormControl(null, [Validators.required, Validators.minLength(3)]),
-    companyName: new FormControl(null, [Validators.required, Validators.minLength(2)])
-  });
-
-  public formInput(): void{
-    this.createUser.emit(this.form.value);
-    this.form.reset(); 
+  dialogCreateUser() {
+    const dialogRef = this.dialog.open(CreateUserDialogComponent, {
+      width: '400px',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.createUser.emit(result);
+      }
+    });
   }
 }
