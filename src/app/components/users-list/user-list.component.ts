@@ -16,6 +16,7 @@ import { NgFor } from "@angular/common";
 export class UserListComponent{
     apiService = inject(UsersApiComponent);
     users: any = []
+    res = [];
     
     ngOnInit(){
         this.apiService.getUsers().subscribe(response => {
