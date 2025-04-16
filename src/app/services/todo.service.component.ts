@@ -2,8 +2,9 @@ import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Todo } from '../Interfaces/todo-interface';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class TodoUserComponent {
+  
   todoSubject = new BehaviorSubject<Todo[]>([]);
 
   setTodo(todos: Todo[]) {
@@ -33,8 +34,6 @@ export class TodoUserComponent {
       })
     );
   }
-  
-
 
   createTodo(todo: Todo) {
     this.todoSubject.next([...this.todoSubject.value, todo]);

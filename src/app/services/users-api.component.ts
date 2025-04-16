@@ -3,8 +3,9 @@ import { Component, inject, Injectable } from '@angular/core';
 import { User } from '../Interfaces/user.interface';
 
 @Injectable({ providedIn: 'root' })
+
 export class UsersApiComponent {
-  apiService = inject(HttpClient);
+apiService = inject(HttpClient);
 
   getUsers() {
     return this.apiService.get<User[]>(

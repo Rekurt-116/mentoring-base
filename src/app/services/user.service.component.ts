@@ -4,8 +4,8 @@ import { User } from '../Interfaces/user.interface';
 
 @Injectable({ providedIn: 'root' })
 export class UsersService {
+  
   usersSubject = new BehaviorSubject<User[]>([]);
-
   setUser(users: User[]) {
     this.usersSubject.next(users);
   }
@@ -31,7 +31,6 @@ export class UsersService {
         }
       })
     );
-    
   }
 
   createUser(user: User) {

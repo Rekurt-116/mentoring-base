@@ -10,11 +10,10 @@ import { Component } from '@angular/core';
 })
 export class MainComponent {
   
-  switchNumbers = [1,2,3,4,5];
-  
+  switchNumbers = [1, 2, 3, 4, 5];
+
   switchFunction() {
     return this.switchNumbers.slice().reverse();
   }
   
-
 }

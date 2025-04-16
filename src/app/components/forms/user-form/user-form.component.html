@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="onCreateUser()">
+    <div>
+        <p class="user-form"> Введите имя</p>
+        <input formControlName="name" class="user-form">
+        <p class="user-form"> Введите емаил</p>
+        <input formControlName="email" class="user-form">
+        <p class="user-form"> Введите номер</p>
+        <input formControlName="phone" class="user-form">
+        <p class="user-form"> Введите адресс</p>
+        <input formControlName="address" class="user-form">
+        <button style="display: flex; margin-top: 20px;" class="user-form"> Добавить пользователя</button>
+    </div>
+</form>
