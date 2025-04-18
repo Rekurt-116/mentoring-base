@@ -36,3 +36,10 @@
     align-items: center; /* Центрировать карточки по вертикали */
     min-height: 100vh; /* Занять всю высоту экрана */
   }
+  
+  .button-label {
+    display: table-cell;
+    font-size: 12px;
+    margin-left: 8px;
+    min-width: 50px;
+  }

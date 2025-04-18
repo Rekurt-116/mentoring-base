@@ -3,8 +3,9 @@ import { UsersApiComponent } from '../../services/users-api.component';
 import { AsyncPipe, NgFor } from '@angular/common';
 import { User } from '../../Interfaces/user.interface';
 import { UserCardComponents } from './user-cards/user-card.component';
-import { UsersService } from '../../services/user.service.component';
+import { UsersService } from '../../services/user-service.component';
 import { UserFormComponent } from '../forms/user-form/user-form.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-user-list',
@@ -22,11 +23,25 @@ export class UserListComponent {
   constructor() {
     this.apiService
       .getUsers()
-      .subscribe((response: any) => this.usersSerice.setUser(response));
+      .subscribe((response: User[]) => this.usersSerice.setUser(response));
   }
 
   deleteUser(id: number) {
-    this.usersSerice.deleteUser(id);
+    let isConfirm = confirm('Вы действительно хотите удалить пользователя?');
+    if (isConfirm === true) {
+      this.usersSerice.deleteUser(id);
+    }
+  }
+  editUser(editedUsers: User) {
+    this.usersSerice.editedUser({
+      ...editedUsers,
+      id: editedUsers.id,
+      name: editedUsers.name,
+      phone: editedUsers.phone,
+      address: {
+        city: editedUsers.address.city,
+      },
+    });
   }
 
   createUser(event: User) {
@@ -34,10 +49,10 @@ export class UserListComponent {
       id: new Date().getTime(),
       name: event.name,
       email: event.email,
-      phone: event.phone,
       address: {
-        city: event.address.city,
+        city: event.address?.city,
       },
+      phone: event.phone,
     });
   }
   

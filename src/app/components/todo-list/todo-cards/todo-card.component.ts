@@ -1,20 +1,20 @@
 import {
   Component,
   EventEmitter,
-  inject,
   Input,
-  input,
   Output,
 } from '@angular/core';
-import { UserFormComponent } from '../../forms/user-form/user-form.component';
+
 import { Todo } from '../../../Interfaces/todo-interface';
+import { MinLengthPipe } from '../../../pipes/min-lenght-pipe';
+
 
 @Component({
   selector: 'app-todo-card',
   templateUrl: './todo-card.component.html',
   styleUrl: './todo-card.component.scss',
   standalone: true,
-  imports: [UserFormComponent],
+  imports: [MinLengthPipe],
 })
 export class TodoCardComponent {
     

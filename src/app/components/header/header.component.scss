@@ -377,3 +377,20 @@ color: #A1A0A0;
   display: flex;
   }
 }
+
+.small-button {
+  padding: 2px 5px !important; /* Минимальные отступы */
+  font-size: 10px !important; /* Маленький размер шрифта */
+  height: 37px !important; /* Фиксированная высота */
+  line-height: 1 !important; /* Уменьшаем высоту строки */
+  background-color: white !important; /* Цвет фона */
+  border: 1px solid #ccc !important; /* Граница */
+  border-radius: 4px !important; /* Скруглённые углы */
+  cursor: pointer !important; /* Указатель мыши */
+  display: inline-block !important; /* Убираем возможное растяжение */
+  box-sizing: border-box !important; /* Учитываем границы и отступы */
+}
+
+.small-button:hover {
+  background-color: #f0f0f0; /* Цвет фона при наведении */
+}

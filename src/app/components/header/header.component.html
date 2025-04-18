@@ -9,8 +9,7 @@
         <div  class="header-nav" routerLink="users">О компании </div>
         <a href="" class="header-nav" *ngIf="!isShowCatalog">Кaталог</a>
        </nav>
-       <button (click)="isShowCatalog = !isShowCatalog" style="background-color: white;"> Показать/скрыть каталог </button>
-       <button (click)="toUpperCase()"> Сделать буквы большими/маленькими </button>
+       <button routerLink="admin" class="small-button">Перейти в админку</button>
      </div>
      <div class="header_right">
        <img  src="/assets/headers/header_phone.svg" alt="Phone">
@@ -18,11 +17,12 @@
        <img class="heart" src="/assets/headers/header_like.svg" alt="Heart"> 
        <button class="cart-button">
          <span><img src="/assets/headers/header_shop.svg" alt="Cart Icon" class="cart-icon" /></span>
-         <span class="cart-text">Пусто</span>
+         <span class="cart-text" yellow>Пусто</span> 
        </button>
      </div>
     </div>
    </section>
+   
    
    <section>
     <div class="header-2">
@@ -41,4 +41,5 @@
    </div>
     </div>
    </section>
+   
    

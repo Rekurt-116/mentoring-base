@@ -14,8 +14,8 @@ import {
 
 @Component({
   selector: 'app-todo-form',
-  templateUrl: './todo-form.component.html',
-  styleUrl: './todo-form.component.scss',
+  templateUrl: './create-todo-form.component.html',
+  styleUrl: './create-todo-form.component.scss',
   standalone: true,
   imports: [ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,6 +34,7 @@ export class TodoFormComponents {
       completed: [null, [Validators.required]],
     });
   }
+  
   onCreateTodo() {
     this.createTodo.emit(this.form.value);
   }

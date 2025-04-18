@@ -1,6 +1,8 @@
 import { NgFor, NgIf } from "@angular/common";
 import { Component } from "@angular/core";
 import { RouterLink } from "@angular/router";
+import { YellowDirective } from "../../directives/yellow.directive";
+import { AdminAuthComponent } from "../../auth/admin.component";
 
 
 @Component({
@@ -8,14 +10,13 @@ import { RouterLink } from "@angular/router";
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
     standalone: true,
-    imports: [RouterLink, NgFor, NgIf],
+    imports: [RouterLink, NgFor, NgIf, YellowDirective, AdminAuthComponent],
 })
 
 export class HeaderComponent{
     
     isShowCatalog = true;
     isUpperCase = false;
-  
     menuItems = [
       'Каталог',
       'Стройматериалы',
@@ -23,19 +24,11 @@ export class HeaderComponent{
       'Электрика',
       'Интерьер и одежда',
     ];
-  
-    toUpperCase(): any {
-      this.menuItems = this.menuItems.map((item) =>
-        this.isUpperCase ? item.toLowerCase() : item.toUpperCase()
-      );
-      this.isUpperCase = !this.isUpperCase;
-    }
     
     switchNumbers = [1,2,3,4,5];
     
     switchFunction() {
       return this.switchNumbers.slice().reverse();
     }
-    
     
 }
