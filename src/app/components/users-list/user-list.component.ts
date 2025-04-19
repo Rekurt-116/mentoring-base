@@ -7,8 +7,8 @@ import { UsersService } from '../../services/user-service.component';
 import { UserFormComponent } from '../forms/user-form/user-form.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Store } from '@ngrx/store';
-import { UserActions } from './user-cards/store/user.actions';
-import { selectUsers } from './user-cards/store/users.selectors';
+import { UserActions } from './store/user.actions';
+import { selectUsers } from './store/users.selectors';
 
 @Component({
   selector: 'app-user-list',
