@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output, } from "@angular/core";
 import { User } from "../../interfaces/user.interface";
 import { MatDialog } from '@angular/material/dialog';
-import { EditUserDialogComponent } from "../edit-user-dialod.component/edit-user-dialog.component";
+import { EditCreateUserDialogComponent } from "../edit-user-dialod.component/edit-create-user-dialog.component";
 import { DeleteUserComponent } from "../../services/delete-user-dialog.component/delete-user-dialog.component";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from '@angular/material/card';
@@ -41,7 +41,7 @@ export class UserCardComponent {
   }
 
   public openDialog(): void {
-      const dialogRef = this.dialog.open(EditUserDialogComponent, {
+      const dialogRef = this.dialog.open(EditCreateUserDialogComponent, {
           data: {user: this.user},
       });
     

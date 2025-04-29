@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -7,6 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateUserDialogComponent } from '../create-user-dialog/create-user-dialog.component';
+import { User } from '../../interfaces/user.interface';
+import { EditCreateUserDialogComponent } from '../edit-user-dialod.component/edit-create-user-dialog.component';
 
 @Component({
   selector: 'app-create-user-form',
@@ -18,6 +20,9 @@ import { CreateUserDialogComponent } from '../create-user-dialog/create-user-dia
 })
 export class CreateUserFormComponent {
 
+    @Input()
+    user!: User;
+
     @Output()
     createUser = new EventEmitter();
     
@@ -26,8 +31,9 @@ export class CreateUserFormComponent {
     ) {}
 
   dialogCreateUser() {
-    const dialogRef = this.dialog.open(CreateUserDialogComponent, {
+    const dialogRef = this.dialog.open(EditCreateUserDialogComponent, {
       width: '400px',
+      data: {user: this.user}
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {

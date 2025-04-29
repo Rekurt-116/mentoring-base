@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
-import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from "@angular/material/dialog";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { MatError, MatFormFieldModule, MatLabel } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
@@ -9,7 +9,7 @@ import { MatButtonModule } from "@angular/material/button";
 
 @Component({
     selector: 'app-edit-user',
-    templateUrl: './edit-user-dialog.component.html',
+    templateUrl: './edit-create-user-dialog.component.html',
     imports: [ ReactiveFormsModule,
             MatFormFieldModule,
             MatLabel,
@@ -19,17 +19,17 @@ import { MatButtonModule } from "@angular/material/button";
             MatButtonModule,
             ],
     standalone: true,
-    styleUrl: './edit-user-dialog.component.scss',
+    styleUrl: './edit-create-user-dialog.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EditUserDialogComponent {
+export class EditCreateUserDialogComponent {
 
-    readonly dialogRef = inject(MatDialogRef<EditUserDialogComponent>);
+    readonly dialogRef = inject(MatDialogRef<EditCreateUserDialogComponent>);
 
     readonly data = inject<{ user: User }>(MAT_DIALOG_DATA);
 
     form = new FormGroup({
-        id: new FormControl(this.data.user.id),
+        id: new FormControl(this.data.user.id, [Validators.required]),
         name: new FormControl(this.data.user.name, [Validators.required, Validators.minLength(2)]),
         email: new FormControl(this.data.user.email, [Validators.required, Validators.email]),
         website: new FormControl(this.data.user.website, [Validators.required, Validators.minLength(3)]),
@@ -38,8 +38,11 @@ export class EditUserDialogComponent {
         })
     })
 
+    
+
     submitForm() {
-        this.dialogRef.close(this.form.value);
+        const user = this.form.value;
+        this.dialogRef.close(user);
     }
 
 }
