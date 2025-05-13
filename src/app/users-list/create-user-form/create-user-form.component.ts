@@ -8,7 +8,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateUserDialogComponent } from '../create-user-dialog/create-user-dialog.component';
 import { User } from '../../interfaces/user.interface';
-import { EditCreateUserDialogComponent } from '../edit-user-dialod.component/edit-create-user-dialog.component';
 
 @Component({
   selector: 'app-create-user-form',
@@ -31,7 +30,7 @@ export class CreateUserFormComponent {
     ) {}
 
   dialogCreateUser() {
-    const dialogRef = this.dialog.open(EditCreateUserDialogComponent, {
+    const dialogRef = this.dialog.open(CreateUserDialogComponent, {
       width: '400px',
       data: {user: this.user}
     });

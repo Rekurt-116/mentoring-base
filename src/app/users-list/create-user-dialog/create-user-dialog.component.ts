@@ -1,5 +1,6 @@
-import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, inject, Output } from '@angular/core';
 import {
+  FormBuilder,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
@@ -32,12 +33,35 @@ import { User } from '../../interfaces/user.interface';
   styleUrl: './create-user-dialog.component.scss',
 })
 export class CreateUserDialogComponent {
+  public formGroup: FormGroup;
+  readonly data = inject<{ user: User }>(MAT_DIALOG_DATA);
+
   constructor(
     public dialogRef: MatDialogRef<CreateUserDialogComponent>,
-    private snackBar: MatSnackBar
-  ) {}
-
-  readonly data = inject<{ user: User }>(MAT_DIALOG_DATA);
+    private snackBar: MatSnackBar,
+    private formBuilder: FormBuilder
+  ) {
+    this.formGroup = formBuilder.group({
+      name: [this.data.user.name,
+        Validators.required,
+        Validators.minLength(2)],
+      email: [this.data.user.email,
+        Validators.required,
+        Validators.email],
+      website: [
+        this.data.user.website,
+        Validators.required,
+        Validators.minLength(3),
+      ],
+      company: formBuilder.group({
+        name: [
+          this.data.user.company.name,
+          Validators.required,
+          Validators.minLength(2),
+        ],
+      }),
+    });
+  }
 
   public form = new FormGroup({
     name: new FormControl(this.data.user.name, [
